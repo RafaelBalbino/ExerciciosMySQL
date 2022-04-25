@@ -9,7 +9,7 @@ com o serviço desta quitanda. */
 USE db_servicos_quitanda;
 
 CREATE TABLE tb_produtos(
-	cod_produto bigint auto_increment primary key,
+    cod_produto bigint auto_increment primary key,
     nome varchar(100),
     valor decimal(65, 2),
     qtd bigint,
@@ -23,7 +23,7 @@ CREATE TABLE tb_produtos(
 (id_categoria) */
 
 CREATE TABLE tb_categoria(
-	id_categoria bigint auto_increment primary key,
+    id_categoria bigint auto_increment primary key,
     nome_categoria varchar(100)
 );
 
@@ -66,7 +66,7 @@ SELECT * FROM tb_produtos;
 
 SELECT * FROM tb_categoria;
 
--- 8.	Faça um SELECT que retorne todas as com o valor maior do que 50.
+-- 8.	Faça um SELECT que retorne todas as categorias com produtos de valor maior do que 50.
 
 SELECT * FROM tb_categoria INNER JOIN tb_produtos ON  tb_categoria.id_categoria = 
 tb_produtos.id_categoria WHERE tb_produtos.valor > 50.00;
