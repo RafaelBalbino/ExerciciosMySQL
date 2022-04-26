@@ -606,41 +606,53 @@ INSERT tb_cursos (nome_curso, preco, vagas, categoria_id)
 VALUES ("Desenvolvimento JAVA", 780.50, 200, 2);
 
 INSERT tb_cursos (nome_curso, preco, vagas, categoria_id)
-VALUES ("Desenvolvimento JAVA", 780.50, 200, 2);
+VALUES ("ADM", 650.28, 300, 1);
 
 INSERT tb_cursos (nome_curso, preco, vagas, categoria_id)
-VALUES ("Desenvolvimento JAVA", 780.50, 200, 2);
+VALUES ("Conserto de Carros", 480.00, 50, 3);
 
 INSERT tb_cursos (nome_curso, preco, vagas, categoria_id)
-VALUES ("Desenvolvimento JAVA", 780.50, 200, 2);
+VALUES ("Construindo com Arduíno", 800.00, 45, 4);
 
 INSERT tb_cursos (nome_curso, preco, vagas, categoria_id)
-VALUES ("Desenvolvimento JAVA", 780.50, 200, 2);
+VALUES ("Desenvolvimento Python", 550, 150, 2);
 
 INSERT tb_cursos (nome_curso, preco, vagas, categoria_id)
-VALUES ("Desenvolvimento JAVA", 780.50, 200, 2);
+VALUES ("Desenvolvimento VSCode", 475.66, 200, 2);
 
 INSERT tb_cursos (nome_curso, preco, vagas, categoria_id)
-VALUES ("Desenvolvimento JAVA", 780.50, 200, 2);
+VALUES ("Aprendendo Tudo Sobre HTML5", 900.50, 230, 2);
 
 INSERT tb_cursos (nome_curso, preco, vagas, categoria_id)
-VALUES ("Desenvolvimento JAVA", 780.50, 200, 2);
+VALUES ("Faça Uma Estátua de si Mesmo", 1100.99, 10, 5);
 
 -- 6.	Faça um SELECT que retorne todes os cursos cujo valor seja maior do que R$ 500,00.
 
+SELECT * FROM tb_cursos WHERE preco > 500.00;
+
 /* 7.	Faça um SELECT que retorne todes os cursos cujo valor esteja no intervalo 
-R$ 600,00 e R$ 1000,00.
+R$ 600,00 e R$ 1000,00. */
+
+SELECT * FROM tb_cursos WHERE preco >= 600.00 AND preco <= 1000.00;
 
 /* 8.	Faça um SELECT utilizando o operador LIKE, buscando todes os cursos que 
-possuam a letra J no atributo nome.
+possuam a letra J no atributo nome. */
+
+SELECT * FROM tb_cursos WHERE nome_curso LIKE "%J%";
 
 /* 9.	Faça um SELECT utilizando a cláusula INNER JOIN, unindo os dados da tabela 
-tb_cursos com os dados da tabela tb_categorias.
+tb_cursos com os dados da tabela tb_categorias. */
+
+SELECT * FROM tb_cursos INNER JOIN tb_categorias ON tb_cursos.categoria_id =
+tb_categorias.id_categoria;
 
 /* 10.	Faça um SELECT utilizando a cláusula INNER JOIN, unindo os dados da tabela 
 tb_cursos com os dados da tabela tb_categorias, onde traga apenas os produtos que 
 pertençam a uma categoria específica (Exemplo: Todes os cursos que pertencem a 
-categoria Java).
+categoria Java). */
+
+SELECT * FROM tb_cursos INNER JOIN tb_categorias ON tb_cursos.categoria_id =
+tb_categorias.id_categoria WHERE id_categoria = 2;
 
 /* 11.	Salve todas as queries para cada um dos requisitos do exercício em um único 
 script (arquivo .SQL) e coloque no seu Github pessoal, no repositório que você criou 
